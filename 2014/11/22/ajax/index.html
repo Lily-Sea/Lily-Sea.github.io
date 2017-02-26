@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>原生ajax | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="####Ajax概念及基本使用同步&amp;amp;异步
+• 同步:必须等待前面的任务完成,才能继续后面的任务
+• 异步:不受当前任务的影响
+异步更新网站
+当我们访问一个普通的网站时,当浏览器加载完:HTML,CSS,JS以后网站的内容就固定了.如果网站内容发生更改必须刷新页面才能够看到更新的内容    • 网站内容更新:常规的网站内容更新,必须通过刷新显示新内容
+####Ajax概念在浏览器中,我们也能">
+<meta property="og:type" content="article">
+<meta property="og:title" content="原生ajax">
+<meta property="og:url" content="http://yoursite.com/2014/11/22/ajax/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="####Ajax概念及基本使用同步&amp;amp;异步
+• 同步:必须等待前面的任务完成,才能继续后面的任务
+• 异步:不受当前任务的影响
+异步更新网站
+当我们访问一个普通的网站时,当浏览器加载完:HTML,CSS,JS以后网站的内容就固定了.如果网站内容发生更改必须刷新页面才能够看到更新的内容    • 网站内容更新:常规的网站内容更新,必须通过刷新显示新内容
+####Ajax概念在浏览器中,我们也能">
+<meta property="og:updated_time" content="2017-02-26T09:07:05.086Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="原生ajax">
+<meta name="twitter:description" content="####Ajax概念及基本使用同步&amp;amp;异步
+• 同步:必须等待前面的任务完成,才能继续后面的任务
+• 异步:不受当前任务的影响
+异步更新网站
+当我们访问一个普通的网站时,当浏览器加载完:HTML,CSS,JS以后网站的内容就固定了.如果网站内容发生更改必须刷新页面才能够看到更新的内容    • 网站内容更新:常规的网站内容更新,必须通过刷新显示新内容
+####Ajax概念在浏览器中,我们也能">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-ajax" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/11/22/ajax/" class="article-date">
+  <time datetime="2014-11-22T11:01:31.000Z" itemprop="datePublished">2014-11-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      原生ajax
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>####Ajax概念及基本使用<br>同步&amp;异步</p>
+<pre><code>• 同步:必须等待前面的任务完成,才能继续后面的任务
+• 异步:不受当前任务的影响
+</code></pre><p>异步更新网站</p>
+<p>当我们访问一个普通的网站时,当浏览器加载完:HTML,CSS,JS以后网站的内容就固定了.如果网站内容发生更改必须刷新页面才能够看到更新的内容<br>    • 网站内容更新:<br>常规的网站内容更新,必须通过刷新显示新内容</p>
+<p>####Ajax概念<br>在浏览器中,我们也能够不刷新页面,通过ajax的方式去获取一些新的内容,类似网页有微博,朋友圈,邮箱等<br>    • 单词解释:<br>Asynchronous Javascript And XML（异步JavaScript和XML）,他并不是凭空出现的新技术,而是对于现有技术的结合:核心是js对象XMLHttpRequest<br>XMLHttpRequest<br>ajax使用的依旧是HTTP请求,那么让我们来回忆一下一个完整的HTTP请求需要什么</p>
+<pre><code>• 请求的网址,方法get/post
+• 提交请求内容数据,请求主体等
+• 接收响应回来的内容
+• 五步使用法:
+    1. 建立XMLHTTPRequest对象
+    2. 注册回调函数
+        § 当服务器回应我们了,我们想要执行什么逻辑
+    3. 使用open方法设置和服务器端交互的基本信息
+        § 设置提交的网址,数据,post提交的一些额外内容
+    4. 设置发送的数据，开始和服务器端交互
+        § 发送数据
+    5. 更新界面
+        § 在注册的回调函数中,获取返回的数据,更新界面
+• 示例代码:GET
+</code></pre><p>get的数据,直接在请求的url中添加即可 ？Nama=ll;</p>
+<p>• 示例代码:POST<br> // 如果想要使用post提交数据,必须添加<br>xhr.setRequestHeader(“Content-type”,”application/x-www-form-urlencoded”);<br>// 将数据通过send方法传递<br>xhr.send(‘name=fox&amp;age=18’);<br>XMLHttpRequest_API讲解</p>
+<p>#####1.创建XMLHttpRequest对象(兼容性写法)<br>    • 新版本浏览器:</p>
+<p>var xml=new XMLHttpRequest();<br>    • （IE5 和 IE6）</p>
+<p>var xml=new ActiveXObject(“Microsoft.XMLHTTP”);<br>    • 考虑兼容性创建Ajax对象</p>
+<p> var request ;<br>if(XMLHttpRequest){<br>// 新式浏览器写法<br>request = new XMLHttpRequest();<br>}else{<br>//IE5,IE6写法<br>new ActiveXObject(“Microsoft.XMLHTTP”);<br>}</p>
+<p>######2.发送请求:<br>方法    描述<br>open(method,url,async)    规定请求的类型、URL 以及是否异步处理请求。<br>            • method：请求的类型；GET 或 POST<br>            • url：文件在服务器上的位置<br>            • async：true（异步）或 false（同步）<br>send(string)    将请求发送到服务器。<br>            • string：仅用于 POST 请求</p>
+<p>#####3.POST请求注意点:<br>如果想要像form表单提交数据那样使用POST请求,需要使用XMLHttpRequest对象的setRequestHeader()方法 来添加 HTTP 头。然后在 send() 方法中添加想要发送的数据：</p>
+<p>xmlhttp.open(“POST”,”ajax_test.php”,true);<br>xmlhttp.setRequestHeader(“Content-type”,”application/x-www-form-urlencoded”);<br>xmlhttp.send(“fname=Bill&amp;lname=Gates”);</p>
+<p>#####4.onreadystatechange事件<br>当服务器给予我们反馈时,我们需要实现一些逻辑<br>属性    描述<br>onreadystatechange    存储函数（或函数名），每当 readyState 属性改变时，就会调用该函数。<br>readyState    存有 XMLHttpRequest 的状态。从 0 到 4 发生变化。<br>            • 0: 请求未初始化<br>            • 1: 服务器连接已建立<br>            • 2: 请求已接收<br>            • 3: 请求处理中<br>            • 4: 请求已完成，且响应已就绪<br>status    200: “OK”<br>    404: 未找到页面</p>
+<p>#####4.服务器响应内容<br>如果响应的是普通字符串,使用responseText,如果响应的是XML,使用responseXML<br>属性    描述<br>responseText    获得字符串形式的响应数据。<br>responseXML    获得 XML 形式的响应数据。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2014/11/22/ajax/" data-id="cizmghump000050ui68b0lm5u" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/03/14/jQuery中的ajax/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Récent</strong>
+      <div class="article-nav-title">
+        
+          jQuery中的ajax
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Articles récents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/07/22/移动端常见问题/">移动端常见问题</a>
+          </li>
+        
+          <li>
+            <a href="/2016/02/10/移动web/">移动web</a>
+          </li>
+        
+          <li>
+            <a href="/2015/11/29/angular-4/">AngularJS -Chapter 4</a>
+          </li>
+        
+          <li>
+            <a href="/2015/11/19/angular-3/">AngularJS -Chapter 3</a>
+          </li>
+        
+          <li>
+            <a href="/2015/10/29/angular-2/">AngularJS -Chapter 2</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

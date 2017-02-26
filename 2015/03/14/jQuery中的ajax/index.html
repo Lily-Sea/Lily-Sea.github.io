@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>jQuery中的ajax | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="#####$.get()方法使用get方法向服务器获取数据    • 参数列表    参数    描述    url    必需。规定将请求发送的哪个 URL。    data    可选。规定连同请求发送到服务器的数据。    success(response,status,xhr)    可选。规定当请求成功时运行的函数。
+额外的参数：
+            • response - 包含来">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jQuery中的ajax">
+<meta property="og:url" content="http://yoursite.com/2015/03/14/jQuery中的ajax/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="#####$.get()方法使用get方法向服务器获取数据    • 参数列表    参数    描述    url    必需。规定将请求发送的哪个 URL。    data    可选。规定连同请求发送到服务器的数据。    success(response,status,xhr)    可选。规定当请求成功时运行的函数。
+额外的参数：
+            • response - 包含来">
+<meta property="og:updated_time" content="2017-02-26T09:08:30.872Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="jQuery中的ajax">
+<meta name="twitter:description" content="#####$.get()方法使用get方法向服务器获取数据    • 参数列表    参数    描述    url    必需。规定将请求发送的哪个 URL。    data    可选。规定连同请求发送到服务器的数据。    success(response,status,xhr)    可选。规定当请求成功时运行的函数。
+额外的参数：
+            • response - 包含来">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-jQuery中的ajax" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/03/14/jQuery中的ajax/" class="article-date">
+  <time datetime="2015-03-14T13:04:11.000Z" itemprop="datePublished">2015-03-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      jQuery中的ajax
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>#####$.get()方法<br>使用get方法向服务器获取数据<br>    • 参数列表<br>    参数    描述<br>    url    必需。规定将请求发送的哪个 URL。<br>    data    可选。规定连同请求发送到服务器的数据。<br>    success(response,status,xhr)    可选。规定当请求成功时运行的函数。</p>
+<pre><code>额外的参数：
+            • response - 包含来自请求的结果数据
+            • status - 包含请求的状态
+            • xhr - 包含 XMLHttpRequest 对象
+dataType    可选。规定预计的服务器响应的数据类型。
+    默认地，jQuery 将智能判断。
+
+    可能的类型：
+            • &quot;xml&quot;
+            • &quot;html&quot;
+            • &quot;text&quot;
+            • &quot;script&quot;
+            • &quot;json&quot;
+            • &quot;jsonp&quot;
+</code></pre><p>• 使用演示:<br>格式化表单$(‘form’).serialize()<br>我们在向服务器提交数据时,如果使用的是Ajax需要手动将数据格式化name=fox&amp;age=18类似这样的格式,JQuery已经帮助我封装好了一个格式化数据的方法<br>    • 语法:$(selector).serialize() 直接可以将form中拥有name属性的表单元素的字,进行格式化</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">	• 示例代码:</div><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>测试jq_serialize方法<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"./files/jquery.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="javascript"></span></div><div class="line">      $(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">          $(<span class="string">"#getFormInfo"</span>).on(<span class="string">"click"</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">              <span class="keyword">var</span> info = $(<span class="string">"#testForm"</span>).serialize()</div><div class="line">              <span class="built_in">console</span>.log(info);</div><div class="line">          &#125;)</div><div class="line">      &#125;)</div><div class="line">  <span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">form</span> <span class="attr">id</span>=<span class="string">"testForm"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">placeholder</span>=<span class="string">"您的姓名"</span> <span class="attr">name</span>=<span class="string">"userName"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">placeholder</span>=<span class="string">"您的爱好"</span> <span class="attr">name</span>=<span class="string">"userHabbit"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">placeholder</span>=<span class="string">"您最喜爱的食物"</span> <span class="attr">name</span>=<span class="string">"userHabbit"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">form</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"格式化表单数据"</span> <span class="attr">id</span>=<span class="string">"getFormInfo"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>####$.post()方法<br>通过post的方式向服务器获取数据<br>    • 参数列表:<br>    参数    描述<br>    url    必需。规定把请求发送到哪个 URL。<br>    data    可选。映射或字符串值。规定连同请求发送到服务器的数据。<br>    success(data, textStatus, jqXHR)    可选。请求成功时执行的回调函数。<br>    dataType    可选。规定预期的服务器响应的数据类型。<br>        默认执行智能判断（xml、json、script 或 html）。<br>    • 示例代码:<br>$.post(“01.post.php”,data,function(backData){<br>    console.log(backData);<br>})</p>
+<p>#####$.ajax({}) 方法<br>$.ajax()方法相比于前面的方法,拥有更为自由的定制性,可以替换$.get(),$.post()方法</p>
+<pre><code>     • 参数:
+    ○ 在w3cSchool_$.ajax_Api中,关于参数只有下列一个.实际使用中,传递的是一个对象
+    ○ 而对象的属性在页面的下方,如图
+    参数    描述
+    settings    可选。用于配置 Ajax 请求的键值对集合。
+        可以通过 $.ajaxSetup() 设置任何选项的默认值。
+• 示例代码:
+    ○ 这里演示的是常用的属性
+</code></pre><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">$.ajax(&#123;</div><div class="line">        url:'01.php',//请求地址</div><div class="line">        data:'name=fox&amp;age=18',//发送的数据</div><div class="line">        type:'GET',//请求的方式</div><div class="line">        success:function (argument) &#123;&#125;,// 请求成功执行的方法</div><div class="line">        beforeSend:function (argument) &#123;&#125;,// 在发送请求之前调用,可以做一些验证之类的处理</div><div class="line">        error:function (argument) &#123;console.log(argument);&#125;,//请求失败调用</div><div class="line">    &#125;)</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/03/14/jQuery中的ajax/" data-id="cizmghun7000650ui2agk87j1" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/09/07/angular/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Récent</strong>
+      <div class="article-nav-title">
+        
+          SPA (Single Page Application)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/11/22/ajax/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">原生ajax</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Articles récents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/07/22/移动端常见问题/">移动端常见问题</a>
+          </li>
+        
+          <li>
+            <a href="/2016/02/10/移动web/">移动web</a>
+          </li>
+        
+          <li>
+            <a href="/2015/11/29/angular-4/">AngularJS -Chapter 4</a>
+          </li>
+        
+          <li>
+            <a href="/2015/11/19/angular-3/">AngularJS -Chapter 3</a>
+          </li>
+        
+          <li>
+            <a href="/2015/10/29/angular-2/">AngularJS -Chapter 2</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
